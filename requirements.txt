@@ -1,4 +1,4 @@
-django==1.11.19
+django==1.11.20
 gunicorn
 django-heroku
 psycopg2-binary
