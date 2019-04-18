@@ -1,45 +1,38 @@
-# Python: Getting Started
+# FYLE BANK API: Getting Started
 
-A barebones Django app, which can easily be deployed to Heroku.
-
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+A simple web application to fetch bank details based on ifsc code, and branches of a bank in a city
 
 ## Running Locally
 
-Make sure you have Python 3.6.6 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+Make sure you have Python 3.6.6 [installed locally](http://install.python-guide.org). Postgresql and git should also be installed locally.
+
+Before checking the API, please make a database named "fyledb" in postgres and import the dump data available at the [repository](https://github.com/snarayanank2/indian_banks)
 
 ```sh
-$ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
+$ git clone https://github.com/modernwarfareuplink/fyleBanksApi.git
+$ cd fyleBanksApi
 
-$ python3 -m venv getting-started
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
-
-$ python manage.py migrate
-$ python manage.py collectstatic
-
-$ heroku local
+$ python3 manage.py runserver
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Your app should now be running on [localhost:8000](http://localhost:8000/).
 
-## Deploying to Heroku
+## API Documentation
 
-```sh
-$ heroku create
-$ git push heroku master
+/ifsc/<ifsc_code_here>/
 
-$ heroku run python manage.py migrate
-$ heroku open
-```
-or
+/search?name=bank_name&city=city_name
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+/credits
 
-## Documentation
+A detailed documentation of the API is available at [here](https://documenter.getpostman.com/view/5036904/S1ERwxDm)
 
-For more information about using Python on Heroku, see these Dev Center articles:
+## Database dump
 
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
+Database dump is available in this [repository](https://github.com/snarayanank2/indian_banks)
+
+## Pull requests
+
+Pull requests to this repository are welcomed!. Contact me for any queries at aruntvs227@gmail.com
