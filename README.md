@@ -2,11 +2,17 @@
 
 A simple web application to fetch bank details based on ifsc code, and branches of a bank in a city
 
+## View Application online
+
+You can have a look at this application hosted on heroku [here](https://fierce-reaches-85054.herokuapp.com/)
+
 ## Running Locally
 
 Make sure you have Python 3.6.6 [installed locally](http://install.python-guide.org). Postgresql and git should also be installed locally.
 
 Before checking the API, please make a database named "fyledb" in postgres and import the dump data available at the [repository](https://github.com/snarayanank2/indian_banks)
+
+Update the details of postgres db in settings.py file within gettingstarted folder
 
 ```sh
 $ git clone https://github.com/modernwarfareuplink/fyleBanksApi.git
