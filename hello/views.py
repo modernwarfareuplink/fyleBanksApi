@@ -24,6 +24,7 @@ def ifscFetch(request, ifsc):
         if row:
             send["ifsc_code"] = row[0]
             send["bank_id"] = row[1]
+            send["bank_name"] = row[7]
             send["branch"] = row[2]
             send["address"] = row[3]
             send["city"] = row[4]
@@ -56,6 +57,7 @@ def branchFetch(request):
                 info = {}
                 info["ifsc_code"] = row[0]
                 info["bank_id"] = row[1]
+                info["bank_name"] = row[7]
                 info["branch"] = row[2]
                 info["address"] = row[3]
                 info["city"] = row[4]
