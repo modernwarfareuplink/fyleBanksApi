@@ -25,10 +25,10 @@ def ifscFetch(request, ifsc):
             send["ifsc_code"] = row[0]
             send["bank_id"] = row[1]
             send["branch"] = row[2]
-            send["city"] = row[3]
-            send["district"] = row[4]
-            send["state"] = row[5]
-            send["bank_name"] = row[6]
+            send["address"] = row[3]
+            send["city"] = row[4]
+            send["district"] = row[5]
+            send["state"] = row[6]
         else:
             send["msg"] = "IFSC code is not linked with any bank on the database"
         return JsonResponse(send, status=200)
@@ -57,10 +57,10 @@ def branchFetch(request):
                 info["ifsc_code"] = row[0]
                 info["bank_id"] = row[1]
                 info["branch"] = row[2]
-                info["city"] = row[3]
-                info["district"] = row[4]
-                info["state"] = row[5]
-                info["bank_name"] = row[6]
+                info["address"] = row[3]
+                info["city"] = row[4]
+                info["district"] = row[5]
+                info["state"] = row[6]
                 details.append(info)
         else:
             send["msg"] = "Bank name and city is not linked with any bank on the database"
