@@ -19,7 +19,7 @@ def ifscFetch(request, ifsc):
     if request.method == "GET":
         send = {}
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * from bank_branches WHERE ifsc='{}'".format(ifsc))
+            cursor.execute("SELECT * from bank_branches WHERE ifsc='%s'",(ifsc))
             row = cursor.fetchone()
         if row:
             send["ifsc_code"] = row[0]
@@ -48,7 +48,7 @@ def branchFetch(request):
             send["msg"] += "Please send city as argument"
             return JsonResponse(send, status=200)
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * from bank_branches WHERE bank_name='{0}' and city='{1}'".format(name, city))
+            cursor.execute("SELECT * from bank_branches WHERE bank_name='%s' and city='%s'",(name, city))
             rows = cursor.fetchall()
         details = []
         if rows:
